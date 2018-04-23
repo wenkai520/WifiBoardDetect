@@ -342,12 +342,27 @@ public class WifiBoardDetect extends Activity {
 //		for(int i = 0; i < processList.size();i++){
 		//for (String line : processList) { 
 //			Log.d(TAG, "line = " + line);
+		    Log.d(TAG, "try get wifi mac");
+		    if(processList.size() >= 4)
+		    	{
+		    		try {
 			_wlan0Strings = processList.get(4);
+		    		} catch (Exception e) {
+					// TODO: handle exception
+		    		}
 //			break;
 //	        }
-		Log.d(TAG, "wifiMac = " + _wlan0Strings.substring(71, 88));
 		if(_wlan0Strings.substring(71, 88) != "00:00:00:00:00:00")
+		    			{
 			_mac = _wlan0Strings.substring(71, 88);
+		    				Log.d(TAG, "wifiMac = " + _wlan0Strings.substring(71, 88));
+		    			}
+		    		else
+		    			_mac =MAC_NULL;
+			    		
+		    	}
+		    else 
+		    	_mac = MAC_NULL;
 		return _mac;
 	}
 	
