@@ -173,7 +173,7 @@ public class WifiBoardDetect extends Activity {
 				switch (msg.what) {
 				case 0:
 					mWifiBoardMacAddress.setText("XX:XX:XX:XX:XX:XX");
-					mDetectResult.setText("<-----未发现WiFi模块----->");
+					mDetectResult.setText("<-未发现WiFi模块->");
 					mDetectResult.setTextColor(Color.RED);
 					list.clear();
 					mAdapter.notifyDataSetChanged();
@@ -211,30 +211,30 @@ public class WifiBoardDetect extends Activity {
 						case 1:
 								Log.d(TAG, " case 1 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent){
-									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setText(" <-PASS->");
 									mDetectResult.setTextColor(Color.GREEN);
 								}else{
-									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setText("<-Fail !!! 信号强度不合格->");
 									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 2:
 								Log.d(TAG, " case 2 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent){
-									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setText(" <-PASS->");
 									mDetectResult.setTextColor(Color.GREEN);
 								}else{
-									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setText("<-Fail !!! 信号强度不合格->");
 									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 3:
 								Log.d(TAG, " case 3 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent && percentage3 > mGetStandPercent){
-									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setText(" <-PASS->");
 									mDetectResult.setTextColor(Color.GREEN);
 								}else{
-									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setText("<-Fail !!! 信号强度不合格->");
 									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
@@ -242,10 +242,10 @@ public class WifiBoardDetect extends Activity {
 								Log.d(TAG, " case 4 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent && percentage3 > mGetStandPercent
 										&& percentage4 > mGetStandPercent){
-									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setText(" <-PASS->");
 									mDetectResult.setTextColor(Color.GREEN);
 								}else{
-									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setText("<-Fail !!! 信号强度不合格->");
 									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
@@ -254,20 +254,20 @@ public class WifiBoardDetect extends Activity {
 								if(percentage1 > mGetStandPercent && percentage2 > mGetStandPercent && percentage3 > mGetStandPercent 
 									&& percentage4 > mGetStandPercent && percentage5 > mGetStandPercent){
 									Log.d(TAG, "percentage is ok !");
-									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setText(" <-PASS->");
 									mDetectResult.setTextColor(Color.GREEN);
 								}else{
-									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setText("<-Fail !!! 信号强度不合格->");
 									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						default:
-							mDetectResult.setText("<-----Fail !!! 未搜索到WiFi----->");
+							mDetectResult.setText("<-Fail !!! 未搜索到WiFi->");
 							mDetectResult.setTextColor(Color.RED);
 							break;
 						}
 					}else{
-						mDetectResult.setText("<-----Fail !!! Mac地址不在指定范围内----->");
+						mDetectResult.setText("<-Fail !!! Mac地址不在指定范围内->");
 						mDetectResult.setTextColor(Color.RED);
 					}
 					break;
