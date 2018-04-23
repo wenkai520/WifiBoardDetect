@@ -48,7 +48,7 @@ public class ListAdapter extends BaseAdapter {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 		viewHolder.ssid.setText(item.ssid);
-		viewHolder.level.setText(item.level + "");
+		viewHolder.level.setText(item.level + "%");
 
 		return convertView;
 	}

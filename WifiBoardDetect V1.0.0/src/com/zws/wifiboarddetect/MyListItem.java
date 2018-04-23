@@ -2,9 +2,9 @@ package com.zws.wifiboarddetect;
 
 public class MyListItem {
 	String ssid;
-	int level;
+	float level;
 
-	public MyListItem(String pssid, int plevel) {
+	public MyListItem(String pssid, float plevel) {
 		ssid = pssid;
 		level = plevel;
 	}

@@ -6,7 +6,7 @@
     <string name="settings">设置</string>
     <string name="find_Ap_Name">搜索到WiFi</string>
     <string name="wifiBoardMac">MAC :</string>
-    <string name="wifiBoardMacAddress">XX:XX:XX:XX:XX:XX</string>
+    <string name="wifiBoardMacAddress"></string>
     <string name="result_text">检测结果：</string>
     <string name="DetectResult"/>
     <string name="wifiName_text">WIFI 名称列表</string>
@@ -16,7 +16,7 @@
     <string name="ssid_3_text">ssid 3:</string>
     <string name="ssid_4_text">ssid 4:</string>
     <string name="ssid_5_text">ssid 5:</string>
-    <string name="mac_range_text">MAC地址范围：</string>
+    <string name="mac_range_text">MAC范围：</string>
     <string name="save">保存</string>
     <string name="modify">修改</string>
     <string name="back">返回测试界面</string>
@@ -24,5 +24,7 @@
     <string name="user_settings_explain"></string>
     <string name="ssid"/>
     <string name="level"/>
+    <string name="to">----------</string>
+    <string name="signalNum">信号强度百分比</string>
 
 </resources>

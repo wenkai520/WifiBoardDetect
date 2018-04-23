@@ -194,7 +194,8 @@
 
 	<LinearLayout
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content" >
+	    android:layout_height="wrap_content"
+	    android:gravity="center_horizontal" >
 
 		<TextView
 		    android:id="@+id/mac_range_text"
@@ -205,11 +206,27 @@
 		    android:text="@string/mac_range_text" />
 
 		<EditText
-		    android:id="@+id/macAddressRange"
+		    android:id="@+id/macAddressRangeBegin"
 		    android:layout_width="0dp"
 		    android:layout_height="wrap_content"
-		    android:layout_weight="5"
+		    android:layout_weight="2"
 		    android:text="@string/wifiBoardMacAddress"
+		    android:gravity="center_horizontal"
+		    android:ems="10" />
+
+		<TextView
+		    android:id="@+id/textView1"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:gravity="center_horizontal"
+		    android:text="@string/to" />
+
+		<EditText
+		    android:id="@+id/macAddressRangeEnd"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
 		    android:gravity="center_horizontal"
 		    android:ems="10" />
 
