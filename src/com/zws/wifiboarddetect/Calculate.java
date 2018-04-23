@@ -48,7 +48,7 @@ public class Calculate {
 			temp_sbu.append(pMacBegin.charAt(k));
 		}
 		for(int k = begin ;k < end + 1 ;k++){
-			if(k ==2 || k == 5 || k == 8 || k ==11)
+			if(k ==2 || k == 5 || k == 8 || k ==11 || k == 14)
 				temp_sbu.append(':');
 			else
 				temp_sbu.append('x');
@@ -71,7 +71,7 @@ public class Calculate {
 				get_sbu.append(getWifiMac.charAt(k));
 			}
 			for(int k = begin ;k < end + 1 ;k++){
-				if(k ==2 || k == 5 || k == 8 || k ==11)
+				if(k ==2 || k == 5 || k == 8 || k ==11 || k == 14)
 				get_sbu.append(':');
 			else
 				get_sbu.append('x');

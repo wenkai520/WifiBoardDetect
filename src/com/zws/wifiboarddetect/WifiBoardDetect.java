@@ -9,6 +9,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -173,6 +174,7 @@ public class WifiBoardDetect extends Activity {
 				case 0:
 					mWifiBoardMacAddress.setText("XX:XX:XX:XX:XX:XX");
 					mDetectResult.setText("<-----未发现WiFi模块----->");
+					mDetectResult.setTextColor(Color.RED);
 					list.clear();
 					mAdapter.notifyDataSetChanged();
 					break;
@@ -210,24 +212,30 @@ public class WifiBoardDetect extends Activity {
 								Log.d(TAG, " case 1 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent){
 									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setTextColor(Color.GREEN);
 								}else{
 									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 2:
 								Log.d(TAG, " case 2 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent){
 									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setTextColor(Color.GREEN);
 								}else{
 									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 3:
 								Log.d(TAG, " case 3 : userInputSsidNum = " + userInputSsidNum);
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent && percentage3 > mGetStandPercent){
 									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setTextColor(Color.GREEN);
 								}else{
 									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 4:
@@ -235,8 +243,10 @@ public class WifiBoardDetect extends Activity {
 								if(percentage1 > mGetStandPercent  && percentage2 > mGetStandPercent && percentage3 > mGetStandPercent
 										&& percentage4 > mGetStandPercent){
 									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setTextColor(Color.GREEN);
 								}else{
 									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						case 5:
@@ -245,16 +255,20 @@ public class WifiBoardDetect extends Activity {
 									&& percentage4 > mGetStandPercent && percentage5 > mGetStandPercent){
 									Log.d(TAG, "percentage is ok !");
 									mDetectResult.setText(" <-----PASS----->");
+									mDetectResult.setTextColor(Color.GREEN);
 								}else{
 									mDetectResult.setText("<-----Fail !!! Wifi信号强度不合格----->");
+									mDetectResult.setTextColor(Color.RED);
 								}
 							break;
 						default:
 							mDetectResult.setText("<-----Fail !!! 未搜索到WiFi----->");
+							mDetectResult.setTextColor(Color.RED);
 							break;
 						}
 					}else{
 						mDetectResult.setText("<-----Fail !!! Mac地址不在指定范围内----->");
+						mDetectResult.setTextColor(Color.RED);
 					}
 					break;
 				default:
@@ -325,11 +339,12 @@ public class WifiBoardDetect extends Activity {
 			 Log.d(TAG, "error = " + e);
 			 e.printStackTrace();  
 		}
-		for (String line : processList) { 
-			Log.d(TAG, "line = " + line);
-			_wlan0Strings = line;
-			break;
-	        }  
+//		for(int i = 0; i < processList.size();i++){
+		//for (String line : processList) { 
+//			Log.d(TAG, "line = " + line);
+			_wlan0Strings = processList.get(4);
+//			break;
+//	        }
 		Log.d(TAG, "wifiMac = " + _wlan0Strings.substring(71, 88));
 		if(_wlan0Strings.substring(71, 88) != "00:00:00:00:00:00")
 			_mac = _wlan0Strings.substring(71, 88);
@@ -338,7 +353,10 @@ public class WifiBoardDetect extends Activity {
 	
 	public void  updateWifiList(ScanResult presult) {
 		
-		if(presult.SSID == null)
+		Log.d(TAG, " updateWifiList = " + presult);
+		if(presult == null || presult.equals(""))
+			return ;
+		if(presult.SSID.equals(null) || presult.SSID.equals(""))
 			return ;
 		if(presult.SSID != null && !presult.SSID.equals(""))
 		{
