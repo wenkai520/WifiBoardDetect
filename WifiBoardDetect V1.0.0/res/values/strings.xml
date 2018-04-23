@@ -20,5 +20,9 @@
     <string name="save">保存</string>
     <string name="modify">修改</string>
     <string name="back">返回测试界面</string>
+    <string name="null_text">       </string>
+    <string name="user_settings_explain"></string>
+    <string name="ssid"/>
+    <string name="level"/>
 
 </resources>
